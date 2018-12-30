@@ -134,7 +134,7 @@ def product():
                 return json.dumps(result)
         if id:
             with connection.cursor() as cursor:
-                sql_update_product = "UPDATE products SET title='{}', desc='{}', price={}, img_url='{}', category={}, favorite='{}' WHERE product_id={};".format(title, desc, price, img_url, category, favorite, id)
+                sql_update_product = "UPDATE products SET title='{}', description='{}', price={}, img_url='{}', category={}, favorite={} WHERE id={}".format(title, desc, price, img_url, category, favorite, id)
                 cursor.execute(sql_update_product)
                 connection.commit()
                 result["STATUS"] = "SUCCESS"
